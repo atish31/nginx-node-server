@@ -1,8 +1,7 @@
-FROM node:18.16.0-alpine3.17
-RUN mkdir -p /opt/app
-WORKDIR /opt/app
+FROM node:14.16.0-alpine3.13
+WORKDIR /src
 COPY package*.json ./
 RUN npm install
-COPY src/ .
-EXPOSE 3000
-CMD [ "npm", "start"]
+COPY . /
+EXPOSE 3001
+CMD [ "npm", "start" ]
